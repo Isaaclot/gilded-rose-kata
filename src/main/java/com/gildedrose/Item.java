@@ -20,17 +20,17 @@ public class Item {
     }
 
     void countSellIn() {
-        if (!name.equals(ItemName.SULFURAS_HAND_OF_RAGNAROS)) {
+        if (!name.equals(ItemType.SULFURAS_HAND_OF_RAGNAROS)) {
             sellIn = sellIn - 1;
         }
     }
 
     public void countQuality() {
-        if (name.equals(ItemName.BACKSTAGE_PASSES)) {
+        if (name.equals(ItemType.BACKSTAGE_PASSES)) {
             countBackPassQuality();
-        } else if (name.equals(ItemName.AGED_BRIE)) {
+        } else if (name.equals(ItemType.AGED_BRIE)) {
             countAgedBrieQuality();
-        } else if (name.equals(ItemName.SULFURAS_HAND_OF_RAGNAROS)) {
+        } else if (name.equals(ItemType.SULFURAS_HAND_OF_RAGNAROS)) {
             countSalfurasQuality();
         } else {
             countCommonItemQuality();

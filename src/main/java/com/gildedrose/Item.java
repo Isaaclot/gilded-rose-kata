@@ -20,24 +20,24 @@ public class Item {
     }
 
     void countSellIn() {
-        if (!name.equals(GildedRose.SULFURAS_HAND_OF_RAGNAROS)) {
+        if (!name.equals(ItemName.SULFURAS_HAND_OF_RAGNAROS)) {
             sellIn = sellIn - 1;
         }
     }
 
-    public void countQuality(GildedRose gildedRose) {
-        if (name.equals(GildedRose.BACKSTAGE_PASSES)) {
-            countBackPassQuality(gildedRose);
-        } else if (name.equals(GildedRose.AGED_BRIE)) {
-            countAgedBrieQuality(gildedRose);
-        } else if (name.equals(GildedRose.SULFURAS_HAND_OF_RAGNAROS)) {
+    public void countQuality() {
+        if (name.equals(ItemName.BACKSTAGE_PASSES)) {
+            countBackPassQuality();
+        } else if (name.equals(ItemName.AGED_BRIE)) {
+            countAgedBrieQuality();
+        } else if (name.equals(ItemName.SULFURAS_HAND_OF_RAGNAROS)) {
             countSalfurasQuality();
         } else {
-            countCommonItemQuality(gildedRose);
+            countCommonItemQuality();
         }
     }
 
-    public void countCommonItemQuality(GildedRose gildedRose) {
+    public void countCommonItemQuality() {
         if (quality > 0) {
             decrQuality(1);
             if (sellIn < 0) {
@@ -46,7 +46,7 @@ public class Item {
         }
     }
 
-    public void countAgedBrieQuality(GildedRose gildedRose) {
+    public void countAgedBrieQuality() {
         if (quality < 50) {
             incrQuality(1);
         }
@@ -55,7 +55,7 @@ public class Item {
         }
     }
 
-    public void countBackPassQuality(GildedRose gildedRose) {
+    public void countBackPassQuality() {
         if (quality < 50) {
             incrQuality(1);
         }

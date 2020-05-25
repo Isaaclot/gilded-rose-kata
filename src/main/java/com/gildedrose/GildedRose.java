@@ -9,8 +9,7 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            item.countSellIn();
-            item.countQuality();
+            item.passOneDay();
         }
     }
 

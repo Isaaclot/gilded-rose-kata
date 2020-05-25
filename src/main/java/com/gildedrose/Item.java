@@ -8,7 +8,24 @@ public class Item {
 
     public int quality;
 
-    public Item(String name, int sellIn, int quality) {
+    public static Item createBackStagePass(int sellIn, int quality) {
+        return new Item(ItemType.BACKSTAGE_PASSES, sellIn, quality);
+    }
+
+    public static Item createAgedBrie(int sellIn, int quality) {
+        return new Item(ItemType.AGED_BRIE, sellIn, quality);
+    }
+
+    public static Item createSulfuras(int sellIn, int quality) {
+        return new Item(ItemType.SULFURAS_HAND_OF_RAGNAROS, sellIn, quality);
+    }
+
+    public static Item create(String name,int sellIn, int quality) {
+        return new Item(name, sellIn, quality);
+    }
+
+
+    private Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
@@ -26,7 +43,7 @@ public class Item {
     }
 
     public void countQuality() {
-        if (name.equals(ItemType.BACKSTAGE_PASSES)) {
+        if (isBackStagePass()) {
             countBackPassQuality();
         } else if (name.equals(ItemType.AGED_BRIE)) {
             countAgedBrieQuality();
@@ -35,6 +52,10 @@ public class Item {
         } else {
             countCommonItemQuality();
         }
+    }
+
+    private boolean isBackStagePass() {
+        return name.equals(ItemType.BACKSTAGE_PASSES);
     }
 
     public void countCommonItemQuality() {
@@ -84,5 +105,10 @@ public class Item {
 
     public static void countSalfurasQuality() {
         // Sulfuras, Hand of Ragnaros empty method
+    }
+
+    public void passOneDay() {
+        countSellIn();
+        countQuality();
     }
 }

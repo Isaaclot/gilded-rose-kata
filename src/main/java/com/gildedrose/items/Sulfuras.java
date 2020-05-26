@@ -12,8 +12,11 @@ public class Sulfuras extends Item {
         super("Sulfuras, Hand of Ragnaros", sellIn, quality);
     }
 
-    @Override
-    protected boolean isSulfuras() {
-        return true;
+    protected void countSellIn() {
+
+    }
+
+    protected void updateQuality() {
+        // Sulfuras, Hand of Ragnaros empty method
     }
 }

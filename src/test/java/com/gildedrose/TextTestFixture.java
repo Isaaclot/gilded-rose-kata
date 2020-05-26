@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import com.gildedrose.items.AgedBrie;
 import com.gildedrose.items.BackStagePass;
-import com.gildedrose.items.NorMalItem;
+import com.gildedrose.items.NormalItem;
 import com.gildedrose.items.Sulfuras;
 
 import java.io.ByteArrayOutputStream;
@@ -21,9 +21,9 @@ public class TextTestFixture {
         printStream.println("OMGHAI!");
 
         Item[] items = new Item[]{
-                new NorMalItem("+5 Dexterity Vest", 10, 20), //
+                new NormalItem("+5 Dexterity Vest", 10, 20), //
                 new AgedBrie(2, 0), //
-                new NorMalItem("Elixir of the Mongoose", 5, 7), //
+                new NormalItem("Elixir of the Mongoose", 5, 7), //
                 new Sulfuras(0, 80), //
                 new Sulfuras(-1, 80),
                 new BackStagePass(15, 20),
@@ -31,7 +31,7 @@ public class TextTestFixture {
                 new BackStagePass(5, 49),
                 new BackStagePass(1, 20),
                 // this conjured item does not work properly yet
-                new NorMalItem("Conjured Mana Cake", 3, 6)};
+                new NormalItem("Conjured Mana Cake", 3, 6)};
 
         GildedRose app = new GildedRose(items);
 

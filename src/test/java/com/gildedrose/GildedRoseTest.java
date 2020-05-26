@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import com.gildedrose.items.AgedBrie;
 import com.gildedrose.items.BackStagePass;
-import com.gildedrose.items.NorMalItem;
+import com.gildedrose.items.NormalItem;
 import com.gildedrose.items.Sulfuras;
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ public class GildedRoseTest {
 
     @Test
     public void foo() {
-        Item[] items = new Item[]{new NorMalItem("foo", 1, 5)};
+        Item[] items = new Item[]{new NormalItem("foo", 1, 5)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals("foo", app.items[0].name);
@@ -24,7 +24,7 @@ public class GildedRoseTest {
 
     @Test
     public void should_negative_sellIn_double_desc_quality() {
-        Item[] items = new Item[]{new NorMalItem("negative_sellIn_foo", -1, 5)};
+        Item[] items = new Item[]{new NormalItem("negative_sellIn_foo", -1, 5)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals("negative_sellIn_foo", app.items[0].name);
@@ -44,7 +44,7 @@ public class GildedRoseTest {
 
     @Test
     public void should_item_no_negative_quality() {
-        Item[] items = new Item[]{new NorMalItem("item", 2, 0)};
+        Item[] items = new Item[]{new NormalItem("item", 2, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals("item", app.items[0].name);

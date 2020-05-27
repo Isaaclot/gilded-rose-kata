@@ -14,20 +14,20 @@ public class BackStagePass extends Item {
 
     protected void updateQuality() {
         if (quality < 50) {
-            incrQuality(1);
+            quality = quality + 1;
         }
         if (sellIn < 11) {
             if (quality < 50) {
-                incrQuality(1);
+                quality = quality + 1;
             }
         }
         if (sellIn < 6) {
             if (quality < 50) {
-                incrQuality(1);
+                quality = quality + 1;
             }
         }
         if (sellIn < 0) {
-            decrQuality(quality);
+            quality = quality - quality;
         }
     }
 }

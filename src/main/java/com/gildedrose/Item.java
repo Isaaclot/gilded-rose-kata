@@ -26,14 +26,6 @@ public class Item {
     protected void updateQuality() {
     }
 
-    public void incrQuality(int offSet) {
-        quality = quality + offSet;
-    }
-
-    public void decrQuality(int offSet) {
-        quality = quality - offSet;
-    }
-
     public void passOneDay() {
         countSellIn();
         updateQuality();

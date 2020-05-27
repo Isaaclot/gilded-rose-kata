@@ -14,10 +14,10 @@ public class AgedBrie extends Item {
 
     protected void updateQuality() {
         if (quality < 50) {
-            incrQuality(1);
+            quality = quality + 1;
         }
         if (sellIn < 0 && quality < 50) {
-            incrQuality(1);
+            quality = quality + 1;
         }
     }
 }

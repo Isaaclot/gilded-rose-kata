@@ -14,9 +14,9 @@ public class NormalItem extends Item {
 
     protected void updateQuality() {
         if (quality > 0) {
-            decrQuality(1);
+            quality = quality - 1;
             if (sellIn < 0) {
-                decrQuality(1);
+                quality = quality - 1;
             }
         }
     }
